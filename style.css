@@ -1,0 +1,130 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: #f0f2f5;
+  color: #333;
+  text-align: center;
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 500px;
+  width: 100%;
+}
+
+.card {
+  background: #fff;
+  color: #000;
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  position: relative;
+  min-height: 250px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  text-align: center;
+  flex-direction: column;
+}
+
+.back {
+  transform: rotateY(180deg);
+  font-size: 1.2rem;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.controls button {
+  margin: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.controls button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+}
+
+#progress {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.heart {
+  color: red;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+
+  .container {
+    padding: 0.5rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+    min-height: 200px;
+  }
+
+  .front, .back {
+    font-size: 1.2rem;
+  }
+
+  .back {
+    font-size: 1rem;
+  }
+
+  .controls button {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  footer {
+    font-size: 0.8rem;
+    padding: 10px 0;
+  }
+}
